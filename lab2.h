@@ -18,17 +18,22 @@ typedef struct arr {
 extern matlab_var_t vars[6];
 extern matlab_arr_t arrs[6];
 
+extern double startValue, stopValue;
+
 
 /* function declarations */
 void readLine ( char *inputPtr );
 void printHelp ( void );
-int processLine ( const char *line );
+int variableOrArray ( char input );
+void segmentString ( char *input );
 
 matlab_var_t *find_var ( char var );
 matlab_arr_t *find_arr ( char var );
 
 int array ( char name, double start, double stop );
-int show ( char name );
+int show ( char name);
 int calc ( char r, char x,char y, char op );
+int clear (char name);
+int set( char name, double v);
 
 #endif /* __LAB2_H__ */
